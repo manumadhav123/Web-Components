@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottomnav</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1c535633a1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li value="0"><i class="fa-sharp fa-solid fa-house"></i></li>
+            <li value="1"><i class="fa-solid fa-heart"></i></li>
+            <li value="2"><i class="fa-solid fa-plus"></i></li>
+            <li value="3"><i class="fa-solid fa-user"></i></li>
+            <li value="4"><i class="fa-solid fa-arrow-right-from-bracket"></i></li>
+            <div id="circle"><i class="fa-solid fa-plus"></i></div>
+        </ul>
+    </div>
+
+    <script>
+        let links=document.getElementsByTagName("li");
+        let circle=document.getElementById("circle");
+
+        for(link of links){
+            link.onclick=function(){
+                for(link of links){
+                    link.style.opacity="1";
+                }
+
+
+
+                circle.style.left=(80*this.value)+"px";
+                circle.innerHTML=this.innerHTML;
+                this.style.opacity="0";
+            }
+        }
+    </script>
+</body>
+</html>
